@@ -5,7 +5,7 @@
  build() {
 	 TAG_NAME=$1
 	 if [ "$TAG_NAME" == "" ] ; then
-		 TAG_NAME="VehicleShowroom-demo" 
+		 TAG_NAME="vehicleshowroom-demo" 
          fi
 	 echo "TAG_NAME:${TAG_NAME}"
 	 docker build -t ${TAG_NAME} .
@@ -32,14 +32,14 @@ start(){
      else 
              HTTP_PORT=10001
      fi
-     
+
      if [[ ! -z "$2" ]]; then
              TURN_PORT="$2"
      else 
              TURN_PORT=3578
      fi
      
-     
+
      if [[ ! -z "$3" ]]; then
              STREAMER_PORT="$3"
      else 

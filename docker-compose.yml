@@ -31,7 +31,7 @@ services:
   
   # The Pixel Streaming demo project
   project:
-    image: "VehicleShowroom-demo"
+    image: "vehicleshowroom-demo"
     network_mode: "host"
     command:
       - "-PixelStreamingURL=ws://127.0.0.1:${STREAMER_PORT}"
