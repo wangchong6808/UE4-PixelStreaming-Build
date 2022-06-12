@@ -5,7 +5,7 @@
  build() {
 	 TAG_NAME=$1
 	 if [ "$TAG_NAME" == "" ] ; then
-		 TAG_NAME="pixelstreaming-demo" 
+		 TAG_NAME="VehicleShowroom-demo" 
          fi
 	 echo "TAG_NAME:${TAG_NAME}"
 	 docker build -t ${TAG_NAME} .
@@ -69,6 +69,12 @@ start(){
      export HTTP_PORT
      export STREAMER_PORT
      export PWD=$(pwd)
+     echo "UNREAL_ENGINE_RELEASE=${UNREAL_ENGINE_RELEASE}"
+     echo "EXTRA_PEERCONNECTION_OPTIONS=${EXTRA_PEERCONNECTION_OPTIONS}"
+     echo "PUBLIC_IP=${PUBLIC_IP}"
+     echo "TURN_PORT=${TURN_PORT}"
+     echo "HTTP_PORT=${HTTP_PORT}"
+     echo "STREAMER_PORT=${STREAMER_PORT}"
      docker-compose $COMPOSE_FLAGS up -d --force-recreate 
      echo ""
      echo http://${PUBLIC_IP}:${HTTP_PORT}
